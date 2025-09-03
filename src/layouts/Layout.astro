@@ -6,7 +6,7 @@ import ButtonLink from "../components/ButtonLink.astro";
 const currentLocale = Astro.currentLocale;
 ---
 
-<html lang="en">
+<html lang={currentLocale}>
     <Head />
     <body class="mx-auto px-4 max-w-3xl bg-coffee text-ash">
         <div class="flex mt-4 justify-end">
