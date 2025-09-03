@@ -1,3 +1,28 @@
 ---
 import "../styles/global.css";
+import Head from "../components/Head.astro";
+import ButtonLink from "../components/ButtonLink.astro";
+
+const currentLocale = Astro.currentLocale;
 ---
+
+<html lang="en">
+    <Head />
+    <body class="mx-auto px-4 max-w-3xl bg-coffee text-ash">
+        <div class="flex mt-4 justify-end">
+            {
+                currentLocale === "cs" && (
+                    <ButtonLink href="/en">English</ButtonLink>
+                )
+            }
+            {
+                (currentLocale === "en" || currentLocale === undefined) && (
+                    <ButtonLink href="/">Česky</ButtonLink>
+                )
+            }
+        </div>
+        <div class="mt-16 md:mt-24">
+            <slot />
+        </div>
+    </body>
+</html>

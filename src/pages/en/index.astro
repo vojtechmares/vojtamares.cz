@@ -1,10 +1,10 @@
 ---
 import {Image} from "astro:assets";
-import Panel from "../components/Panel.astro";
-import Paragraph from "../components/Paragraph.astro";
-import Layout from "../layouts/Layout.astro";
+import Panel from "../../components/Panel.astro";
+import Paragraph from "../../components/Paragraph.astro";
+import Layout from "../../layouts/Layout.astro";
 
-import VojtechMares from "../images/vojtech-mares.jpg";
+import VojtechMares from "../../images/vojtech-mares.jpg";
 ---
 
 <Layout>
@@ -18,22 +18,22 @@ import VojtechMares from "../images/vojtech-mares.jpg";
         style="font-family: var(--font-national-park)"
         class="text-5xl text-brownie font-extrabold text-center"
     >
-        Ahoj! Já jsem Vojtěch Mareš
+        Ahoy! I'm Vojtěch Mareš
     </h1>
     <Panel>
         <h2
             style="font-family: var(--font-national-park)"
             class="my-4 text-3xl text-brownie font-bold"
         >
-            O mně 🤵‍♂️
+            About 🤵‍♂️
         </h2>
         <Paragraph>
             <ul class="ml-4 list-disc">
-                <li>Ještě mi nebylo 30, ale blíží se to 👀</li>
-                <li>Bydlím v Praze</li>
+                <li>I'm not 30, yet 👀</li>
+                <li>I live in Prague, Czech Republic</li>
                 <li>
-                    Jsem ajťák, kus programování, kus správy serverů, neudělám
-                    vám mobilní aplikaci ani neopravím tiskárnu
+                    I work in IT, some programming, some server maintenance. I
+                    won't make your mobile app. I won't fix your printer
                 </li>
             </ul>
         </Paragraph>
@@ -43,56 +43,58 @@ import VojtechMares from "../images/vojtech-mares.jpg";
             style="font-family: var(--font-national-park)"
             class="my-4 text-3xl text-brownie font-bold"
         >
-            Práce 💼
+            Work 💼
         </h2>
         <h3
             style="font-family: var(--font-national-park)"
             class="my-2 text-xl text-brownie font-medium"
         >
-            Jsem Senior DevOps/Platform engineer
+            I'm Senior DevOps/Platform engineer
         </h3>
         <Paragraph>
-            Česky/lidsky to znamená, že se starám o provoz aplikací na
-            serverech, o vrstvu mezi operačním systém a aplikací, tak aby se vše
-            dalo škálovat, automatizovat a věci za mě dělaly stroje.
+            In a human language, it means that I am responsible for lifecycle
+            and maintenance of server side applications. I maintain the layer
+            between operating system and the application. I automate as much as
+            possible so the work is done by a machine, not by me. This allows
+            fast scaling and more automations.
         </Paragraph>
         <Paragraph>
-            To není všechno, co takový DevOpsák dělá. Také řeším automatizaci
-            při vývoji: aby vývojářům potom co kód pošlou na server (<code
+            That's not all, what a DevOps engineer does. I also automate
+            development: when developer pushes code to the server (<code
                 >git commit; git push</code
-            >) se spustila automatizace, která kód zkontroluje (formátování,
-            pravidla jak má vše vypadat), otestuje a pokud je vše v pořádku,
-            nakonec aplikací "zbuildí" (sestaví). Výsledek je to, co se nasazuje
-            na servery, nebo posílá do AppStore.
+            >), automated pipeline is invoked, which runs things like linters,
+            automated tests, and then builds the application into an artifact.
+            The artifact is then deployed onto a server or AppStore. That's that
+            in a nutshell.
         </Paragraph>
         <Paragraph>
-            A aby toho nebylo málo, tak ještě školím DevOps technologie. Více u
-            mě na pracovním webu.
+            And because it's not enough, I do trainings about the DevOps
+            technologies. More about that on my work website.
         </Paragraph>
         <Paragraph>
-            <strong>Důležité odkazy 🔗:</strong>
+            <strong>Important links 🔗:</strong>
             <ul class="list-disc pl-4">
                 <li>
-                    můj web: <a class="underline" href="https://www.mares.cz"
+                    my web: <a class="underline" href="https://www.mares.cz"
                         >mares.cz</a
                     >
                 </li>
                 <li>
-                    školení: <a
+                    training: <a
                         class="underline"
                         href="https://www.mares.cz/#skoleni"
                         >mares.cz/#skoleni</a
                     >
                 </li>
                 <li>
-                    veřejné termíny školení: <a
+                    public training sessions: <a
                         class="underline"
                         href="https://www.mares.cz/skoleni/verejne-terminy"
                         >mares.cz/skoleni/verejne-terminy</a
                     >
                 </li>
                 <li>
-                    pracovní email: <a
+                    work email: <a
                         class="underline"
                         href="mailto:vojtech@mares.cz">vojtech@mares.cz</a
                     >
@@ -105,39 +107,38 @@ import VojtechMares from "../images/vojtech-mares.jpg";
             style="font-family: var(--font-national-park)"
             class="my-4 text-3xl text-brownie font-bold"
         >
-            Koníčky 🐴
+            Hobbies 🪏
         </h2>
         <h3
             style="font-family: var(--font-national-park)"
             class="my-2 text-xl text-brownie font-medium"
         >
-            Skaut 🏕️
+            Scout 🏕️
         </h3>
         <Paragraph>
-            Jsem skautem už {new Date().getFullYear() - 2005} let. Za tu dobu jsem
-            byl na spoustě výprav, táborů, závodů a tak vůbec. Skauting je super
-            a podle mě by si to měl každý, alespoň vyzkoušet 😃
+            I'm scout for {new Date().getFullYear() - 2005} years. In that time,
+            I've been to many camps, scout races, events, courses, meetings and more...
+            I think it's great and everyone should at least try it 😃
         </Paragraph>
         <Paragraph>
-            V roce 2023 jsem byl na Světovém Skautském Jamboree v Jižní Koreji
-            jako člen Českého Contingent Management Týmu (realizační tým
-            zajišťující Českou výpravu). Díky tajfunu, nepřipravenosti Korejců a
-            řadě dalším problémům jsme byli vidět v médiích úplně všude. Nakonec
-            všechno dobře dopadlo a mám z toho intenzivní zážitek a řadu
-            vzpomínek na celý život. Ale dost mě to odradilo do čehokoliv
-            takového, jít znovu.
+            In 2023 I attended World Scout Jamboree in South Korea as a member
+            of Czech Contingent Management Team. Thanks to the typhoon, poor
+            management and many other issues, this Jamboree blew up in the news
+            and we were everywhere. Everything was fine in the end, so I have
+            many intense memories. But, such event kind of killed my will to do
+            anything like this ever again.
         </Paragraph>
         <h3
             style="font-family: var(--font-national-park)"
             class="my-2 text-xl text-brownie font-medium"
         >
-            Cvičím v Kouli&trade; 🏋️‍♂️
+            Gym 🏋️‍♂️
         </h3>
         <Paragraph>
-            Jsem ajťák, pracuju od stolu. Tak abych se taky hýbal, chodím 3x
-            týdně cvičit do <a class="underline" href="https://zeleznakoule.cz/"
-                >Železné Koule</a
-            >.
+            I work in IT, I work at a table. So to do some excercise, I go to
+            gym "<a class="underline" href="https://zeleznakoule.cz/"
+                >Železná Koule</a
+            >" three times a week. .
         </Paragraph>
         <h3
             style="font-family: var(--font-national-park)"
@@ -146,18 +147,18 @@ import VojtechMares from "../images/vojtech-mares.jpg";
             Surfing 🏄‍♂️
         </h3>
         <Paragraph>
-            Rád surfuju, takový ideální sport na provozování v Česku...
+            I like to surf, a great sport for landlocked state...
             <ul class="ml-4 list-disc">
                 <li>
-                    Surfuju v zahraničí přes <a
+                    Surfing abroad with Surf-Trip <a
                         class="underline"
                         href="https://www.surf-trip.cz/">Surf-Trip.cz</a
                     >
                 </li>
                 <li>
-                    Surfuju v Praze na umělé vlně na Štvanici <a
-                        class="underline"
-                        href="https://www.vlnystvanice.cz/">VlnyŠtvanice.cz</a
+                    Surfing in Prague on man-made wave at Štvanice
+                    <a class="underline" href="https://www.vlnystvanice.cz/"
+                        >VlnyŠtvanice.cz</a
                     >
                 </li>
             </ul>
@@ -166,11 +167,11 @@ import VojtechMares from "../images/vojtech-mares.jpg";
             style="font-family: var(--font-national-park)"
             class="my-2 text-xl text-brownie font-medium"
         >
-            Kytara 🎸
+            Guitar 🎸
         </h3>
         <Paragraph>
-            Před pár lety jsem se začal učit na kytaru, abych si mohl hrát
-            písničky u táboráku.
+            A few years ago I've started learning to play guitar, so I can play
+            some favourite songs of mine near campfire.
         </Paragraph>
         <h3
             style="font-family: var(--font-national-park)"
@@ -179,9 +180,9 @@ import VojtechMares from "../images/vojtech-mares.jpg";
             Slackline ❓
         </h3>
         <Paragraph>
-            Slackline je (životní) balanc. Super věc, nepravidelně chodím na
-            pravidelné srazy ve Středy odpoledne v Pražské Stromovce u
-            Planetária.
+            Slackline is for me a (work-life) balance. It's fun. Sometimes I go
+            to regular Wednesday Slackline meeting in Prague, park Stromovka
+            near the Planetarium.
         </Paragraph>
     </Panel>
 </Layout>
