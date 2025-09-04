@@ -11,7 +11,6 @@ steps:
     image: codeberg.org/woodpecker-plugins/node-pm
     settings:
       run: deploy # script name
-      with: pnpm # if `with` is set, enforce to use this package manager
     environment:
       CLOUDFLARE_API_TOKEN:
         from_secret: cloudflare_api_token
