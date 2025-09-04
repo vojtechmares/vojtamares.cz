@@ -3,3 +3,7 @@ compatibility_date = "2025-09-03"
 
 [assets]
 directory = "./dist"
+
+[[routes]]
+pattern = "www.vojtamares.cz"
+custom_domain = true
