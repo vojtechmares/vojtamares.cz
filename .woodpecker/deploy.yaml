@@ -7,7 +7,7 @@ workspace:
   path: src/mareshq-websites/vojtamares.cz
 
 variables:
-  - &node_image "node:22"
+  - &node_image "node:22-bookworm"
 
 steps:
   - name: setup
