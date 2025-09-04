@@ -16,11 +16,7 @@ steps:
       - export PNPM_STORE_DIR=$${CI_WORKSPACE}/.pnpm-store
       - export PNPM_HOME=$${CI_WORKSPACE}/pnpm
       - export PATH="$PNPM_HOME:$PATH"
-      - npm install --global npm
-      - npm install --global pnpm
-      - pnpm config set store-dir $PNPM_STORE_DIR
-      - SHELL="$(which ash)" pnpm setup
-      - source ~/.bashrc
+      - apk add --no-cache pnpm
       - pnpm install --global wrangler@latest
 
   - name: install
