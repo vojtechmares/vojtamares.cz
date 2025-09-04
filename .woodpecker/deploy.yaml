@@ -12,6 +12,7 @@ variables:
 steps:
   - name: setup
     image: *node_image
+    entrypoint: ["/bin/bash", "-c"]
     commands:
       - export PNPM_STORE_DIR=$${CI_WORKSPACE}/.pnpm-store
       - export PNPM_HOME=$${CI_WORKSPACE}/pnpm
@@ -25,6 +26,7 @@ steps:
 
   - name: install
     image: *node_image
+    entrypoint: ["/bin/bash", "-c"]
     commands:
       - export PNPM_STORE_DIR=$${CI_WORKSPACE}/.pnpm-store
       - export PNPM_HOME=$${CI_WORKSPACE}/pnpm
@@ -33,6 +35,7 @@ steps:
 
   - name: build
     image: *node_image
+    entrypoint: ["/bin/bash", "-c"]
     commands:
       - export PNPM_STORE_DIR=$${CI_WORKSPACE}/.pnpm-store
       - export PNPM_HOME=$${CI_WORKSPACE}/pnpm
@@ -41,6 +44,7 @@ steps:
 
   - name: deploy
     image: *node_image
+    entrypoint: ["/bin/bash", "-c"]
     environment:
       CLOUDFLARE_API_TOKEN:
         from_secret: cloudflare_api_token
