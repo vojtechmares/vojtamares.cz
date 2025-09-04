@@ -19,7 +19,7 @@ steps:
       - npm install --global npm
       - npm install --global pnpm
       - pnpm config set store-dir $PNPM_STORE_DIR
-      - SHELL="$(which bash)" pnpm setup
+      - SHELL="$(which ash)" pnpm setup
       - source ~/.bashrc
       - pnpm install --global wrangler@latest
 
