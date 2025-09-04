@@ -7,7 +7,7 @@ workspace:
   path: src/mareshq-websites/vojtamares.cz
 
 variables:
-  - &node_image "node:22-alpine"
+  - &node_image "node:22"
 
 steps:
   - name: setup
@@ -16,8 +16,12 @@ steps:
       - export PNPM_STORE_DIR=$${CI_WORKSPACE}/.pnpm-store
       - export PNPM_HOME=$${CI_WORKSPACE}/pnpm
       - export PATH="$PNPM_HOME:$PATH"
-      - apk add --no-cache pnpm
-      - pnpm install --global wrangler@latest
+      - corepack enable
+      - corepack prepare pnpm@latest-10 --activate
+      - pnpm config set store-dir $PNPM_STORE_DIR
+      - SHELL="$(which bash)" pnpm setup
+      - source ~/.bashrc
+      - pnpm install --global --dangerously-allow-all-builds wrangler@latest
 
   - name: install
     image: *node_image
