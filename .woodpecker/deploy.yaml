@@ -6,50 +6,20 @@ workspace:
   base: /woodpecker
   path: src/mareshq-websites/vojtamares.cz
 
-variables:
-  - &node_image "node:22-bookworm"
-
 steps:
-  - name: setup
-    image: *node_image
-    entrypoint: ["/bin/bash", "-c"]
-    commands:
-      - export PNPM_STORE_DIR=$${CI_WORKSPACE}/.pnpm-store
-      - export PNPM_HOME=$${CI_WORKSPACE}/pnpm
-      - export PATH="$PNPM_HOME:$PATH"
-      - corepack enable
-      - corepack prepare pnpm@latest-10 --activate
-      - pnpm config set store-dir $PNPM_STORE_DIR
-      - SHELL="$(which bash)" pnpm setup
-      - source ~/.bashrc
-      - pnpm install --global --dangerously-allow-all-builds wrangler@latest
-
-  - name: install
-    image: *node_image
-    entrypoint: ["/bin/bash", "-c"]
-    commands:
-      - export PNPM_STORE_DIR=$${CI_WORKSPACE}/.pnpm-store
-      - export PNPM_HOME=$${CI_WORKSPACE}/pnpm
-      - export PATH="$PNPM_HOME:$PATH"
-      - pnpm install --frozen-lockfile
-
   - name: build
-    image: *node_image
-    entrypoint: ["/bin/bash", "-c"]
-    commands:
-      - export PNPM_STORE_DIR=$${CI_WORKSPACE}/.pnpm-store
-      - export PNPM_HOME=$${CI_WORKSPACE}/pnpm
-      - export PATH="$PNPM_HOME:$PATH"
-      - pnpm run build
+    image: codeberg.org/woodpecker-plugins/node-pm
+    settings:
+      run: build # script name
+      with: pnpm # if `with` is set, enforce to use this package manager
+      frozen_lockfile: true # recommended
+      ignore_node_modules: true # recommended
 
   - name: deploy
-    image: *node_image
-    entrypoint: ["/bin/bash", "-c"]
-    environment:
-      CLOUDFLARE_API_TOKEN:
-        from_secret: cloudflare_api_token
-    commands:
-      - export PNPM_STORE_DIR=$${CI_WORKSPACE}/.pnpm-store
-      - export PNPM_HOME=$${CI_WORKSPACE}/pnpm
-      - export PATH="$PNPM_HOME:$PATH"
-      - wrangler deploy
+    image: codeberg.org/woodpecker-plugins/node-pm
+    settings:
+      run: deploy # script name
+      with: pnpm # if `with` is set, enforce to use this package manager
+      environment:
+        CLOUDFLARE_API_TOKEN:
+          from_secret: cloudflare_api_token
