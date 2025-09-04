@@ -2,10 +2,6 @@ when:
   - event: push
     branch: main
 
-workspace:
-  base: /woodpecker
-  path: src/mareshq-websites/vojtamares.cz
-
 steps:
   - name: deploy
     image: codeberg.org/woodpecker-plugins/node-pm
