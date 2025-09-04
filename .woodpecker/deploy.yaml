@@ -1,0 +1,51 @@
+when:
+  - event: push
+    branch: main
+
+workspace:
+  base: /woodpecker
+  path: src/mareshq-websites/vojtamares.cz
+
+variables:
+  - &node_image "node:22-alpine"
+
+steps:
+  - name: setup
+    image: *node_image
+    commands:
+      - export PNPM_STORE_DIR=$${CI_WORKSPACE}/.pnpm-store
+      - export PNPM_HOME=$${CI_WORKSPACE}/pnpm
+      - export PATH="$PNPM_HOME:$PATH"
+      - npm install --global npm
+      - npm install --global pnpm
+      - pnpm config set store-dir $PNPM_STORE_DIR
+      - SHELL="$(which bash)" pnpm setup
+      - source ~/.bashrc
+      - pnpm install --global wrangler@latest
+
+  - name: install
+    image: *node_image
+    commands:
+      - export PNPM_STORE_DIR=$${CI_WORKSPACE}/.pnpm-store
+      - export PNPM_HOME=$${CI_WORKSPACE}/pnpm
+      - export PATH="$PNPM_HOME:$PATH"
+      - pnpm install --frozen-lockfile
+
+  - name: build
+    image: *node_image
+    commands:
+      - export PNPM_STORE_DIR=$${CI_WORKSPACE}/.pnpm-store
+      - export PNPM_HOME=$${CI_WORKSPACE}/pnpm
+      - export PATH="$PNPM_HOME:$PATH"
+      - pnpm run build
+
+  - name: deploy
+    image: *node_image
+    environment:
+      CLOUDFLARE_API_TOKEN:
+        from_secret: cloudflare_api_token
+    commands:
+      - export PNPM_STORE_DIR=$${CI_WORKSPACE}/.pnpm-store
+      - export PNPM_HOME=$${CI_WORKSPACE}/pnpm
+      - export PATH="$PNPM_HOME:$PATH"
+      - wrangler deploy
