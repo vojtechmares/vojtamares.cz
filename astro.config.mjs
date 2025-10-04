@@ -8,6 +8,8 @@ import cloudflare from "@astrojs/cloudflare";
 export default defineConfig({
     site: "https://www.vojtamares.cz",
 
+    trailingSlash: "never",
+
     i18n: {
         locales: ["cs", "en"],
         defaultLocale: "cs",
