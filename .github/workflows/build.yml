@@ -1,0 +1,28 @@
+name: Build
+
+on:
+  push:
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+
+    steps:
+      - name: checkout code
+        uses: actions/checkout@v6
+
+      - name: setup node 24.x
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24.x
+
+      - name: setup pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: install dependencies
+        shell: bash
+        run: pnpm install --frozen-lockfile
+
+      - name: build app
+        shell: bash
+        run: pnpm run build
