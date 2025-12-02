@@ -20,7 +20,7 @@
   "devDependencies": {
     "wrangler": "^4.33.2"
   },
-  "packageManager": "pnpm@10.15.1",
+  "packageManager": "pnpm@10.24.0",
   "engines": {
     "node": "25.x"
   }
