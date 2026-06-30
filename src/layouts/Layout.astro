@@ -7,22 +7,18 @@ const currentLocale = Astro.currentLocale;
 ---
 
 <html lang={currentLocale}>
-    <Head />
-    <body class="mx-auto px-4 max-w-3xl bg-coffee-crema text-coffee-espresso">
-        <div class="flex mt-4 justify-end">
-            {
-                currentLocale === "cs" && (
-                    <ButtonLink href="/en">English</ButtonLink>
-                )
-            }
-            {
-                (currentLocale === "en" || currentLocale === undefined) && (
-                    <ButtonLink href="/">Česky</ButtonLink>
-                )
-            }
-        </div>
-        <div class="mt-16 md:mt-24">
-            <slot />
-        </div>
-    </body>
+  <Head />
+  <body class="mx-auto px-4 max-w-3xl bg-neutral-900 text-amber-100">
+    <div class="flex mt-4 justify-end">
+      {currentLocale === "cs" && <ButtonLink href="/en">English</ButtonLink>}
+      {
+        (currentLocale === "en" || currentLocale === undefined) && (
+          <ButtonLink href="/">Česky</ButtonLink>
+        )
+      }
+    </div>
+    <div class="mt-16 md:mt-24">
+      <slot />
+    </div>
+  </body>
 </html>

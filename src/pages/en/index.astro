@@ -1,5 +1,5 @@
 ---
-import {Image} from "astro:assets";
+import { Image } from "astro:assets";
 import Panel from "../../components/Panel.astro";
 import Paragraph from "../../components/Paragraph.astro";
 import Layout from "../../layouts/Layout.astro";
@@ -8,182 +8,176 @@ import VojtechMares from "../../images/vojtech-mares.jpg";
 ---
 
 <Layout>
-    <Image
-        loading="eager"
-        src={VojtechMares}
-        alt="Vojtěch Mareš"
-        width="300"
-        class="mx-auto m-8 border-4 border-coffee-noir rounded-full"
-    />
-    <h1
-        style="font-family: var(--font-national-park)"
-        class="text-5xl text-coffee-noir font-extrabold text-center"
+  <Image
+    loading="eager"
+    src={VojtechMares}
+    alt="Vojtěch Mareš"
+    width="300"
+    class="mx-auto m-8 rounded-full"
+  />
+  <h1
+    style="font-family: var(--font-national-park)"
+    class="text-5xl font-extrabold text-center"
+  >
+    Ahoy! I'm Vojtěch Mareš
+  </h1>
+  <Panel>
+    <h2
+      style="font-family: var(--font-national-park)"
+      class="my-4 text-3xl font-bold"
     >
-        Ahoy! I'm Vojtěch Mareš
-    </h1>
-    <Panel>
-        <h2
-            style="font-family: var(--font-national-park)"
-            class="my-4 text-3xl text-coffee-espresso font-bold"
-        >
-            About 🤵‍♂️
-        </h2>
-        <Paragraph>
-            <ul class="ml-4 list-disc">
-                <li>I'm not 30, yet 👀</li>
-                <li>I live in Prague, Czech Republic</li>
-                <li>
-                    I work in IT, some programming, some server maintenance. I
-                    won't make your mobile app. I won't fix your printer
-                </li>
-            </ul>
-        </Paragraph>
-    </Panel>
-    <Panel>
-        <h2
-            style="font-family: var(--font-national-park)"
-            class="my-4 text-3xl text-coffee-espresso font-bold"
-        >
-            Work 💼
-        </h2>
-        <h3
-            style="font-family: var(--font-national-park)"
-            class="my-2 text-xl text-coffee-espresso font-medium"
-        >
-            I'm Senior DevOps/Platform engineer
-        </h3>
-        <Paragraph>
-            In a human language, it means that I am responsible for lifecycle
-            and maintenance of server side applications. I maintain the layer
-            between operating system and the application. I automate as much as
-            possible so the work is done by a machine, not by me. This allows
-            fast scaling and more automations.
-        </Paragraph>
-        <Paragraph>
-            That's not all, what a DevOps engineer does. I also automate
-            development: when developer pushes code to the server (<code
-                >git commit; git push</code
-            >), automated pipeline is invoked, which runs things like linters,
-            automated tests, and then builds the application into an artifact.
-            The artifact is then deployed onto a server or AppStore. That's that
-            in a nutshell.
-        </Paragraph>
-        <Paragraph>
-            And because it's not enough, I do trainings about the DevOps
-            technologies. More about that on my work website.
-        </Paragraph>
-        <Paragraph>
-            <strong>Important links 🔗:</strong>
-            <ul class="list-disc pl-4">
-                <li>
-                    my web: <a class="underline" href="https://www.mares.cz"
-                        >mares.cz</a
-                    >
-                </li>
-                <li>
-                    training: <a
-                        class="underline"
-                        href="https://www.mares.cz/#skoleni"
-                        >mares.cz/#skoleni</a
-                    >
-                </li>
-                <li>
-                    public training sessions: <a
-                        class="underline"
-                        href="https://www.mares.cz/skoleni/verejne-terminy"
-                        >mares.cz/skoleni/verejne-terminy</a
-                    >
-                </li>
-                <li>
-                    work email: <a
-                        class="underline"
-                        href="mailto:vojtech@mares.cz">vojtech@mares.cz</a
-                    >
-                </li>
-            </ul>
-        </Paragraph>
-    </Panel>
-    <Panel>
-        <h2
-            style="font-family: var(--font-national-park)"
-            class="my-4 text-3xl text-coffee-espresso font-bold"
-        >
-            Hobbies 🪏
-        </h2>
-        <h3
-            style="font-family: var(--font-national-park)"
-            class="my-2 text-xl text-coffee-espresso font-medium"
-        >
-            Scout 🏕️
-        </h3>
-        <Paragraph>
-            I'm scout for {new Date().getFullYear() - 2005} years. In that time,
-            I've been to many camps, scout races, events, courses, meetings and more...
-            I think it's great and everyone should at least try it 😃
-        </Paragraph>
-        <Paragraph>
-            In 2023 I attended World Scout Jamboree in South Korea as a member
-            of Czech Contingent Management Team. Thanks to the typhoon, poor
-            management and many other issues, this Jamboree blew up in the news
-            and we were everywhere. Everything was fine in the end, so I have
-            many intense memories. But, such event kind of killed my will to do
-            anything like this ever again.
-        </Paragraph>
-        <h3
-            style="font-family: var(--font-national-park)"
-            class="my-2 text-xl text-coffee-espresso font-medium"
-        >
-            Gym 🏋️‍♂️
-        </h3>
-        <Paragraph>
-            I work in IT, I work at a table. So to do some excercise, I go to
-            gym "<a class="underline" href="https://zeleznakoule.cz/"
-                >Železná Koule</a
-            >" three times a week. .
-        </Paragraph>
-        <h3
-            style="font-family: var(--font-national-park)"
-            class="my-2 text-xl text-coffee-espresso font-medium"
-        >
-            Surfing 🏄‍♂️
-        </h3>
-        <Paragraph>
-            I like to surf, a great sport for landlocked state...
-            <ul class="ml-4 list-disc">
-                <li>
-                    Surfing abroad with Surf-Trip <a
-                        class="underline"
-                        href="https://www.surf-trip.cz/">Surf-Trip.cz</a
-                    >
-                </li>
-                <li>
-                    Surfing in Prague on a man-made wave at Štvanice
-                    <a class="underline" href="https://www.vlnystvanice.cz/"
-                        >VlnyŠtvanice.cz</a
-                    >
-                </li>
-            </ul>
-        </Paragraph>
-        <h3
-            style="font-family: var(--font-national-park)"
-            class="my-2 text-xl text-coffee-espresso font-medium"
-        >
-            Guitar 🎸
-        </h3>
-        <Paragraph>
-            A few years ago I've started learning to play guitar, so I can play
-            some favourite songs of mine near campfire.
-        </Paragraph>
-        <h3
-            style="font-family: var(--font-national-park)"
-            class="my-2 text-xl text-coffee-espresso font-medium"
-        >
-            Slackline ❓
-        </h3>
-        <Paragraph>
-            Slackline is for me a (work-life) balance. It's fun. Sometimes I go
-            to regular Wednesday Slackline meeting in Prague, park Stromovka
-            near the Planetarium.
-        </Paragraph>
-    </Panel>
+      About 🤵‍♂️
+    </h2>
+    <Paragraph>
+      <ul class="ml-4 list-disc">
+        <li>I'm not 30, yet 👀</li>
+        <li>I live in Prague, Czech Republic</li>
+        <li>
+          I work in IT, some programming, some server maintenance. I won't make
+          your mobile app. I won't fix your printer
+        </li>
+      </ul>
+    </Paragraph>
+  </Panel>
+  <Panel>
+    <h2
+      style="font-family: var(--font-national-park)"
+      class="my-4 text-3xl font-bold"
+    >
+      Work 💼
+    </h2>
+    <h3
+      style="font-family: var(--font-national-park)"
+      class="my-2 text-xl font-medium"
+    >
+      I'm Senior DevOps/Platform engineer
+    </h3>
+    <Paragraph>
+      In a human language, it means that I am responsible for lifecycle and
+      maintenance of server side applications. I maintain the layer between
+      operating system and the application. I automate as much as possible so
+      the work is done by a machine, not by me. This allows fast scaling and
+      more automations.
+    </Paragraph>
+    <Paragraph>
+      That's not all, what a DevOps engineer does. I also automate development:
+      when developer pushes code to the server (<code>git commit; git push</code
+      >), automated pipeline is invoked, which runs things like linters,
+      automated tests, and then builds the application into an artifact. The
+      artifact is then deployed onto a server or AppStore. That's that in a
+      nutshell.
+    </Paragraph>
+    <Paragraph>
+      And because it's not enough, I do trainings about the DevOps technologies.
+      More about that on my work website.
+    </Paragraph>
+    <Paragraph>
+      <strong>Important links 🔗:</strong>
+      <ul class="list-disc pl-4">
+        <li>
+          my web: <a class="underline" href="https://www.mares.cz">mares.cz</a>
+        </li>
+        <li>
+          training: <a class="underline" href="https://www.mares.cz/#skoleni"
+            >mares.cz/#skoleni</a
+          >
+        </li>
+        <li>
+          public training sessions: <a
+            class="underline"
+            href="https://www.mares.cz/skoleni/verejne-terminy"
+            >mares.cz/skoleni/verejne-terminy</a
+          >
+        </li>
+        <li>
+          work email: <a class="underline" href="mailto:vojtech@mares.cz"
+            >vojtech@mares.cz</a
+          >
+        </li>
+      </ul>
+    </Paragraph>
+  </Panel>
+  <Panel>
+    <h2
+      style="font-family: var(--font-national-park)"
+      class="my-4 text-3xl font-bold"
+    >
+      Hobbies 🪏
+    </h2>
+    <h3
+      style="font-family: var(--font-national-park)"
+      class="my-2 text-xl font-medium"
+    >
+      Scout 🏕️
+    </h3>
+    <Paragraph>
+      I'm scout for {new Date().getFullYear() - 2005} years. In that time, I've been
+      to many camps, scout races, events, courses, meetings and more... I think it's
+      great and everyone should at least try it 😃
+    </Paragraph>
+    <Paragraph>
+      In 2023 I attended World Scout Jamboree in South Korea as a member of
+      Czech Contingent Management Team. Thanks to the typhoon, poor management
+      and many other issues, this Jamboree blew up in the news and we were
+      everywhere. Everything was fine in the end, so I have many intense
+      memories. But, such event kind of killed my will to do anything like this
+      ever again.
+    </Paragraph>
+    <h3
+      style="font-family: var(--font-national-park)"
+      class="my-2 text-xl font-medium"
+    >
+      Gym 🏋️‍♂️
+    </h3>
+    <Paragraph>
+      I work in IT, I work at a table. So to do some excercise, I go to gym "<a
+        class="underline"
+        href="https://zeleznakoule.cz/">Železná Koule</a
+      >" three times a week. .
+    </Paragraph>
+    <h3
+      style="font-family: var(--font-national-park)"
+      class="my-2 text-xl font-medium"
+    >
+      Surfing 🏄‍♂️
+    </h3>
+    <Paragraph>
+      I like to surf, a great sport for landlocked state...
+      <ul class="ml-4 list-disc">
+        <li>
+          Surfing abroad with Surf-Trip <a
+            class="underline"
+            href="https://www.surf-trip.cz/">Surf-Trip.cz</a
+          >
+        </li>
+        <li>
+          Surfing in Prague on a man-made wave at Štvanice
+          <a class="underline" href="https://www.vlnystvanice.cz/"
+            >VlnyŠtvanice.cz</a
+          >
+        </li>
+      </ul>
+    </Paragraph>
+    <h3
+      style="font-family: var(--font-national-park)"
+      class="my-2 text-xl font-medium"
+    >
+      Guitar 🎸
+    </h3>
+    <Paragraph>
+      A few years ago I've started learning to play guitar, so I can play some
+      favourite songs of mine near campfire.
+    </Paragraph>
+    <h3
+      style="font-family: var(--font-national-park)"
+      class="my-2 text-xl font-medium"
+    >
+      Slackline ❓
+    </h3>
+    <Paragraph>
+      Slackline is for me a (work-life) balance. It's fun. Sometimes I go to
+      regular Wednesday Slackline meeting in Prague, park Stromovka near the
+      Planetarium.
+    </Paragraph>
+  </Panel>
 </Layout>
