@@ -6,33 +6,31 @@ import cloudflare from "@astrojs/cloudflare";
 
 // https://astro.build/config
 export default defineConfig({
-    site: "https://www.vojtamares.cz",
+  site: "https://www.vojtamares.cz",
 
-    trailingSlash: "never",
+  trailingSlash: "never",
 
-    i18n: {
-        locales: ["cs", "en"],
-        defaultLocale: "cs",
-        routing: {
-            prefixDefaultLocale: false,
-        },
+  i18n: {
+    locales: ["cs", "en"],
+    defaultLocale: "cs",
+    routing: {
+      prefixDefaultLocale: false,
     },
+  },
 
-    vite: {
-        plugins: [tailwindcss()],
+  vite: {
+    plugins: [tailwindcss()],
+  },
+
+  fonts: [
+    {
+      provider: fontProviders.google(),
+      name: "National Park",
+      cssVariable: "--font-national-park",
     },
+  ],
 
-    experimental: {
-        fonts: [
-            {
-                provider: fontProviders.google(),
-                name: "National Park",
-                cssVariable: "--font-national-park",
-            },
-        ],
-    },
-
-    adapter: cloudflare({
-        imageService: "compile",
-    }),
+  adapter: cloudflare({
+    imageService: "compile",
+  }),
 });
